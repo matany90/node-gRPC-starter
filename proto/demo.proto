@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package proto;
+
+// ------------ Demo Service -----------
+service DemoService {
+  rpc GetHelloWorld(Empty) returns (GetHelloWorldResponse) {}
+  rpc MultiplicationArray(multiplicationArrayRequest) returns (multiplicationArrayResponse) {}
+}
+
+message GetHelloWorldResponse {
+  string text = 1;
+}
+
+message multiplicationArrayRequest {
+  repeated int32 array = 1;
+  int32 multiplyBy = 2;
+}
+
+message multiplicationArrayResponse {
+  repeated int32 multiplicationArray = 1;
+}
+
+message Empty {}
